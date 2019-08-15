@@ -30,6 +30,10 @@ public class ConfigResource {
     String configFromDatabase;
 
     @Inject
+    @ConfigProperty(name = "duke")
+    Duke duke;
+
+    @Inject
     Config config;
 
     @GET
@@ -44,6 +48,7 @@ public class ConfigResource {
         JsonObject result = Json.createObjectBuilder()
                 .add("injectedConfigProperty", message)
                 .add("configFromDb", configFromDatabase)
+                .add("convertedProperty", duke.toString())
                 .add("sources", sources)
                 .build();
         return Response.ok(result).build();
