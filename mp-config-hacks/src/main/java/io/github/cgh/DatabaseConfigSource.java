@@ -21,7 +21,7 @@ public class DatabaseConfigSource implements ConfigSource {
 
     public DatabaseConfigSource() {
         try {
-            dataSource = (DataSource) new InitialContext().lookup("java:jboss/datasources/ExampleDS");
+            dataSource = (DataSource) new InitialContext().lookup("jdbc/h2test");
         } catch (NamingException e) {
             throw new IllegalStateException(e);
         }
@@ -33,7 +33,7 @@ public class DatabaseConfigSource implements ConfigSource {
             Map<String, String> properties = new HashMap<>();
             try {
                 while (configs.next()) {
-                    properties.put(configs.getString(0), configs.getString(1));
+                    properties.put(configs.getString(1), configs.getString(2));
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

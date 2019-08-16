@@ -1,7 +1,7 @@
 <archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0
-    http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" 
-    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="microprofile-hacks-archetype">
+    http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+                      xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="microprofile-hacks-archetype">
 
     <fileSets>
         <fileSet filtered="true" packaged="true">
@@ -9,6 +9,9 @@
         </fileSet>
         <fileSet filtered="false" packaged="false">
             <directory>src/webapp</directory>
+        </fileSet>
+        <fileSet filtered="false" packaged="false">
+            <directory>liberty</directory>
         </fileSet>
         <fileSet filtered="true" packaged="false">
             <directory/>
