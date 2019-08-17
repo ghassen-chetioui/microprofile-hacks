@@ -24,10 +24,9 @@ public class OrdersResource {
     }
 
     @POST
-    @Path("/{name}")
-    public Response create(@PathParam("name") String name) {
-        orderService.order(name);
-        return Response.created(uriInfo.getBaseUri()).build();
+    public Response create(String name) {
+        Order order = orderService.order(name);
+        return Response.created(uriInfo.getRequestUriBuilder().path(order.id).build()).build();
     }
 
     @GET

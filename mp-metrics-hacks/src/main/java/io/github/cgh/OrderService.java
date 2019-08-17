@@ -28,11 +28,12 @@ public class OrderService {
 
     private Map<String, Order> orders = new ConcurrentHashMap<>();
 
-    public void order(String name) {
-        String id = UUID.randomUUID().toString();
-        this.orders.put(id, new Order(id, name));
+    public Order order(String name) {
+        Order order = new Order(UUID.randomUUID().toString(), name);
+        this.orders.put(order.id, order);
         metricRegistry.counter(name + "_orders").inc();
         ordersNumber.inc();
+        return order;
     }
 
     public Stream<Order> orders() {
