@@ -8,7 +8,7 @@
             <directory>src/main/java</directory>
         </fileSet>
         <fileSet filtered="false" packaged="false">
-            <directory>src/webapp</directory>
+            <directory>src/main/webapp</directory>
         </fileSet>
         <fileSet filtered="false" packaged="false">
             <directory>liberty</directory>
