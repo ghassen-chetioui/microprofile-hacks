@@ -14,6 +14,8 @@
         <user>admin</user>
     </administrator-role>
 
+    <mpMetrics authentication="false"/>
+
     <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
     <httpEndpoint id="defaultHttpEndpoint"
                   httpPort="9080"
