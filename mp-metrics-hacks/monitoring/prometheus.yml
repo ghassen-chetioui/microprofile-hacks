@@ -1,0 +1,15 @@
+scrape_configs:
+
+  - job_name: 'liberty'
+    scrape_interval: 15s
+    scheme: https
+    basic_auth:
+      username: 'admin'
+      password: 'admin'
+
+    tls_config:
+      insecure_skip_verify: true
+
+    # translates to https://localhost:9443/metrics
+    static_configs:
+      - targets: ['localhost:9443']
